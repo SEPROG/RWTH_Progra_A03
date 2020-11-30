@@ -3,7 +3,7 @@
  * Aufgabe 7
  *
  * @author 422412, Sebastian Poppenborg
- * @author xxxxxx, Finja     Rang
+ * @author 422202, Finja     Rang
  */
 
 public class Main {

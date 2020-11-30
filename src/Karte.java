@@ -8,9 +8,32 @@ public class Karte {
         this.WERT = wert;
     }
 
+    /** Überprüft ob diese Karte eine andere bedient.
+     *
+     * @param other, die Karte bei der überprüft werden soll.
+     * @return True, wenn diese Karte die andere Karte bedient. False wenn nicht.
+     */
+    public boolean bedient(Karte other) {
+        return (this.FARBE == other.FARBE || this.WERT == other.WERT || this.WERT == Wert.BUBE);
+    }
+
+    /** Überprüft ob mindestens eine der übergebenen Karte diese Karte bedient.
+     *
+     * @param karten, zu überpüfende Karten.
+     * @return True, wenn eine der Karten diese Karte bedient.
+     */
+    public boolean bedienbar(Karte... karten) {
+        for (Karte karte : karten) {
+            if(karte.bedient(this)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
-        return ( this.FARBE.toString() + this.WERT.toString() );
+        return (this.FARBE.toString() + this.WERT.toString());
     }
 
     /** Gibt eine neue Karten Instanz zurueck.

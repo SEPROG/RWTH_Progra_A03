@@ -4,6 +4,14 @@ public class Spieler {
     private String name;
     private double siegesquote;
 
+    /** Gibt in stdout aus ob dieser Spieler eine bestimmte Karte bedienen kann oder nicht.
+     *
+     * @param k, die karte die bedient werden soll.
+     */
+    public void kannBedienen(Karte k) {
+        System.out.println(name + (k.bedienbar(kartenhand) ? "kann bedienen!" : "kann nicht bedienen!"));
+    }
+
     @Override
     public String toString() {
         return this.name;
